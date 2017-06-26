@@ -31,135 +31,22 @@
               <img src="img/logo_small.png">
           </a>
       </li>
-      <li>
-          <div class="dropdown na-czasie">
+      <% categories.forEach(function (category) { %>
+        <li>
+          <div class="dropdown <%= category.className %>">
               <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  na czasie
+                  <%= category.title %>
                   <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" role="menu">
-                  <li>
-                      <a href="">Temat miesiąca</a>
-                  </li>
-                  <li>
-                      <a href="">Recenzje</a>
-                  </li>
-                  <li>
-                      <a href="">Relacje</a>
-                  </li>
-                  <li>
-                      <a href="">Lwy salonowe</a>
-                  </li>
-                  <li>
-                      <a href="">Prime Time</a>
-                  </li>
+                <% category.cycles.forEach(function (cycle) { %>
+                <li>
+                    <a href="<%= cycle.slug %>"><%= cycle.name %></a>
+                </li>
+                <% }); %>
               </ul>
           </div>
       </li>
-      <li>
-          <div class="dropdown wsrod-ludzi">
-              <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  wśród ludzi
-                  <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                  <li>
-                      <a href="">Miasto projektowane</a>
-                  </li>
-                  <li>
-                      <a href="">Meandry kultury</a>
-                  </li>
-              </ul>
-          </div>
-      </li>
-      <li>
-          <div class="dropdown w-slowach">
-              <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  w słowach
-                  <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                  <li>
-                      <a href="">Poezje nieoczywiste</a>
-                  </li>
-                  <li>
-                      <a href="">Fantastyczny problem</a>
-                  </li>
-                  <li>
-                      <a href="">Wyrazy wyraziste</a>
-                  </li>
-                  <li>
-                      <a href="">Żywe słowa</a>
-                  </li>
-              </ul>
-          </div>
-      </li>
-      <li>
-          <div class="dropdown w-muzyce">
-              <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  w muzyce
-                  <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                  <li>
-                      <a href="">Muzyka dla mas / nas</a>
-                  </li>
-              </ul>
-          </div>
-      </li>
-      <li>
-          <div class="dropdown na-ekranie">
-              <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  na ekranie
-                  <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                  <li>
-                      <a href="">Adaptacje & sensacje</a>
-                  </li>
-                  <li>
-                      <a href="">Dziesięć kochanek Filmu</a>
-                  </li>
-              </ul>
-          </div>
-      </li>
-      <li>
-          <div class="dropdown w-obrazach">
-              <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  w obrazach
-                  <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                  <li>
-                      <a href="">Ścieżki malarstwa</a>
-                  </li>
-                  <li>
-                      <a href="">Kultura w dymkach</a>
-                  </li>
-              </ul>
-          </div>
-      </li>
-      <li>
-          <div class="dropdown w-przekroju">
-              <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  w przekroju
-                  <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                  <li>
-                      <a href="">Popkulturowy bestiariusz</a>
-                  </li>
-                  <li>
-                      <a href="">Przepis na:</a>
-                  </li>
-                  <li>
-                      <a href="">Imaginacje & inspiracje</a>
-                  </li>
-                  <li>
-                      <a href="">LUS|TRO</a>
-                  </li>
-              </ul>
-          </div>
-      </li>
+      <% }); %>
   </ul>
 </nav>
