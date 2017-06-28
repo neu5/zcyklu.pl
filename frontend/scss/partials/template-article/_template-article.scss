@@ -1,0 +1,38 @@
+.article-main-wrapper {
+    > .container > .header-wrapper {
+        text-align: center;
+        margin-top: 300px;
+        > .category-name {
+            font-weight: 600;
+            padding: 2px 12px;
+            @each $serie-name, $serie-color in $series-to-colors {
+                &.#{$serie-name} {
+                    background-color: #{$serie-color};
+                }
+            }
+        }
+        > .article-info > time {
+            display: block;
+        }
+    }
+}
+
+main.article-wrapper {
+    margin-top: 30px;
+    .article-lead {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    p + p {
+        font-size: 18px;
+    }
+    .author-biogram {
+        > img {
+            height: 100px;
+        }
+        > p {
+            padding-left: 15px;
+            font-size: 12px;
+        }
+    }
+}

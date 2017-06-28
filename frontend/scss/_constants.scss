@@ -1,0 +1,28 @@
+$white: #ffffff;
+$silver-light: #fcfcfc;
+$silver-light-border: #f0f0f0;
+
+$colors: (
+    red: #DE4040,
+    pink: #E874E0,
+    violet: #af05e8,
+    blue: #0087DB,
+    aquamarine: #58D3Db,
+    pistachio: #71C7A5,
+    orange: #F08030,
+);
+
+$series-to-colors: (
+    na-czasie: map-get($colors, red),
+    wsrod-ludzi: map-get($colors, pink),
+    w-slowach: map-get($colors, violet),
+    w-muzyce: map-get($colors, blue),
+    na-ekranie: map-get($colors, aquamarine),
+    w-obrazach: map-get($colors, pistachio),
+    w-przekroju: map-get($colors, orange),
+);
+
+$z-layers: (
+    main-navbar-fixed: 1000,
+    white-text: 10,
+);

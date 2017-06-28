@@ -1,0 +1,131 @@
+// @import "compass/css3";
+
+.nav-wrapper {
+    margin-top: 20px;
+    height: 160px;
+    font-weight: 300;
+    a {
+        color: #000000;
+    }
+    button {
+        background: transparent;
+        border: none;
+    }
+    .dropdown-menu {
+        // @include border-radius(0);
+        // @include box-shadow(none);
+    }
+}
+
+.nav-social-icons-wrapper {
+    height: 100px;
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+    a {
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+    }
+    .col-lg-1 {
+        text-align: right;
+        a {
+            float: right;
+        }
+    }
+    .icon-link {
+        width: 40px;
+        border: 1px solid $white;
+        position: relative;
+        text-align: center;
+        &:hover {
+            background-color: $silver-light;
+            border: 1px solid $silver-light-border;
+        }
+    }
+    .logo-wrapper {
+        margin-left: 45px;
+        img {
+            height: 80px;
+        }
+    }
+    > li {
+        .dropdown-menu {
+            left: 34%;
+        }
+    }
+}
+
+.nav-series-wrapper {
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style: none;
+    > li {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .dropdown > button {
+        margin: 0;
+        height: 35px;
+        padding: 0 15px;
+        text-transform: uppercase;
+        > .caret {
+            position: relative;
+            top: -1px;
+        }
+    }
+    .dropdown {
+        transition: 0.2s background ease;
+        &:hover, &.open {
+            color: #ffffff;
+            @each $serie-name, $serie-color in $series-to-colors {
+                &.#{$serie-name} {
+                    background-color: #{$serie-color};
+                }
+            }
+        }
+        .dropdown-menu {
+            margin-top: -2px;
+        }
+    }
+    .logo-z-cyklu-small-wrapper, .o-nas-wrapper, .kontakt-wrapper {
+        display: none;
+    }
+    .logo-z-cyklu-small img {
+        height: 25px;
+    }
+    &.affix {
+        top: 0;
+        display: flex;
+        margin: 0;
+        background: rgba(255, 255, 255, 0.95);
+        border-bottom: 1px solid #eee;
+        z-index: map-get($z-layers, main-navbar-fixed);
+        .logo-z-cyklu-small-wrapper, .o-nas-wrapper, .kontakt-wrapper, li {
+            display: flex;
+            align-items: center;
+        }
+        .o-nas-wrapper .dropdown:hover, .o-nas-wrapper .dropdown.open {
+            color: #000000;
+        }
+        .dropdown .dropdown-menu {
+            margin-top: 2px;
+            a {
+                width: 100%;
+            }
+        }
+        > li > a {
+            display: block;
+            height: 35px;
+            padding-top: 8px;
+            &.logo-z-cyklu-small {
+                padding-top: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.articles-wrapper {
+    a {
+        color: #000000;
+    }
+    h1 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+    > .article-big-wrapper {
+        height: 470px;
+        overflow: hidden;
+        @each $series-name, $series-color in $series-to-colors {
+            &.#{$series-name} .article-big {
+                border-left: 4px #{$series-color} solid;
+            }
+        }
+        .article-big {
+            height: 420px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 20px 20px 0;
+            .article-content-wrapper {
+                position: absolute;
+                width: 88%;
+                bottom: 0;
+                left: 25px;
+                color: #ffffff;
+                .article-date {
+                    font-size: 12px;
+                    font-weight: 300;
+                }
+                .article-author {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+                .article-lead {
+                    font-size: 14px;
+                    font-weight: 300;
+                    width: 60%;
+                    height: 100px;
+                    overflow: hidden;
+                }
+            }
+            .icon-angle-circled-right {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                color: #ffffff;
+                font-size: 42px;
+            }
+            img {
+                transition: 0.3s ease;
+                transform: scale(1.1);
+            }
+            &:hover img {
+                transform: scale(1);
+            }
+        }
+    }
+    > .article-wrapper {
+        height: 230px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        @each $series-name, $series-color in $series-to-colors {
+            &.#{$series-name} .article {
+                border-left: 4px #{$series-color} solid;
+            }
+        }
+        .article {
+            height: 190px;
+            overflow: hidden;
+            .img-wrapper {
+                width: 240px;
+                height: 190px;
+                overflow: hidden;
+                float: left;
+            }
+            img {
+                width: 100%;
+                transition: 0.3s ease;
+                transform: scale(1.1);
+            }
+            &:hover img {
+                transform: scale(1);
+            }
+            .article-content-wrapper {
+                width: 210px;
+                float: left;
+                margin-left: 10px;
+                .article-date {
+                    font-size: 12px;
+                    font-weight: 300;
+                }
+                .article-author {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+                .article-lead {
+                    margin: 0;
+                    font-size: 14px;
+                    font-weight: 300;
+                    height: 135px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}

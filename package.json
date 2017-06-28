@@ -7,7 +7,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "prestart": "node-sass frontend/scss/ -o public/stylesheets/ --output-style compressed",
+    "start": "node index.js",
+    "sass-dev": "node-sass -w frontend/scss/ -o public/stylesheets/"
   },
   "dependencies": {
     "contentful": "4.4.4",
@@ -28,6 +30,7 @@
   "license": "MIT",
   "devDependencies": {
     "dotenv": "4.0.0",
+    "node-sass": "4.5.3",
     "standard": "10.0.2"
   }
 }

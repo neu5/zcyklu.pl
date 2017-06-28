@@ -1,0 +1,84 @@
+.main-img-wrapper {
+    width: 100%;
+    height: 565px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    &:hover, &:focus {
+        color: $white;
+        text-decoration: none;
+    }
+    .header-wrapper {
+        margin-top: 350px;
+        .article-info {
+            margin: 0;
+            font-weight: 300;
+        }
+        .article-header {
+            margin: 0;
+            padding: 8px 0 12px 0;
+            font-size: 44px;
+            font-weight: 600;
+            letter-spacing: -1.4px;
+            word-spacing: 6px;
+            text-transform: uppercase;
+        }
+        .article-lead {
+            width: 50%;
+            margin: 0;
+            padding-top: 5px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 20px;
+        }
+        .read-more {
+            margin-top: 10px;
+            display: block;
+        }
+    }
+}
+.frontpage-wrapper {
+    margin-top: 30px;
+}
+.aside-series-wrapper {
+    h1 {
+        font-size: 24px;
+        padding-left: 15px;
+        text-transform: uppercase;
+    }
+    .series-wrapper {
+        top: 35px;
+        width: 190px;
+        overflow: hidden;
+        background-color: $silver-light;
+        border-left: 1px solid $silver-light-border;
+    }
+    .series-list {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 10px 0;
+        li {
+            line-height: 24px;
+            a {
+                color: #000000;
+                text-decoration: none;
+                display: block;
+                transition: 0.2s ease;
+                border-left: 0 solid;
+                padding-left: 15px;
+                &:hover {
+                    border-left: 2px solid;
+                    padding-left: 20px;
+                    @each $serie-name, $serie-color in $series-to-colors {
+                        &.#{$serie-name} {
+                            border-color: #{$serie-color};
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

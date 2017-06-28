@@ -1,0 +1,36 @@
+.footer-wrapper {
+    margin-top: 20px;
+    border-top: 1px solid $silver-light-border;
+    .footer-nav-list {
+        margin: 0;
+        padding: 10px 0 20px 0;
+        list-style: none;
+        li {
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 0 20px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &.copy-wrapper {
+                float: right;
+                font-size: 12px;
+                padding-right: 0;
+                color: gray;
+                .claim {
+                    margin-right: 15px;
+                }
+                a {
+                    transition: 0.5s color ease;
+                    color: #000000;
+                    &:hover {
+                        color: map-get($colors, red);
+                    }
+                }
+            }
+            a {
+                color: #000000;
+            }
+        }
+    }
+}
