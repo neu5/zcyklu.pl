@@ -57,7 +57,11 @@ router.use(fetchData)
 
 router.get('/', function (req, res) {
   res.render('pages/index', {
-    categories: req.categories
+    categories: req.categories,
+    // this will be posts for homepage
+    page: {
+      content: ''
+    }
   })
 })
 

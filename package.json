@@ -12,7 +12,8 @@
   "dependencies": {
     "contentful": "4.4.4",
     "ejs": "2.5.6",
-    "express": "4.15.2"
+    "express": "4.15.2",
+    "serve-favicon": "2.4.3"
   },
   "repository": {
     "type": "git",

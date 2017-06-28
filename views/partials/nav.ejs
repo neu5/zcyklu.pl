@@ -1,49 +1,51 @@
-<nav class="nav">
-  <ul class="row nav-social-icons-wrapper">
-      <li class="col-lg-3 logo-wrapper">
-          <a class="logo-z-cyklu" href="/">
-              <img src="img/logo_medium_full.png">
-          </a>
-      </li>
-      <li class="col-lg-1 col-lg-offset-4">
-          <a href="fb" class="icon-link"><span class="icon-facebook"></span></a>
-      </li>
-      <li class="col-lg-1">
-          <a href="mail" class="icon-link"><span class="icon-mail"></span></a>
-      </li>
-      <li class="col-lg-1">
-          <a href="o-nas">
-              o nas
-          </a>
-      </li>
-      <li class="col-lg-1">
-          <a href="kontakt">
-              kontakt
-          </a>
-      </li>
-  </ul>
-  <ul class="row container nav-series-wrapper" data-spy="affix" data-offset-top="145">
-      <li class="logo-z-cyklu-small-wrapper">
-          <a class="logo-z-cyklu-small" href="#">
-              <img src="img/logo_small.png">
-          </a>
-      </li>
-      <% categories.forEach(function (category) { %>
-        <li>
-          <div class="dropdown <%= category.className %>">
-              <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <%= category.title %>
-                  <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                <% category.cycles.forEach(function (cycle) { %>
-                <li>
-                    <a href="<%= cycle.slug %>"><%= cycle.name %></a>
-                </li>
-                <% }); %>
-              </ul>
-          </div>
-      </li>
-      <% }); %>
-  </ul>
-</nav>
+<div class="container nav-wrapper">
+    <nav class="nav">
+    <ul class="row nav-social-icons-wrapper">
+        <li class="col-lg-3 logo-wrapper">
+            <a class="logo-z-cyklu" href="/">
+                <img src="img/logo_medium_full.png">
+            </a>
+        </li>
+        <li class="col-lg-1 col-lg-offset-4">
+            <a href="https://www.facebook.com/zcyklu" target="_blank" class="icon-link"><span class="icon-facebook"></span></a>
+        </li>
+        <li class="col-lg-1">
+            <a href="mailto:redakcja@zcyklu.pl" class="icon-link"><span class="icon-mail"></span></a>
+        </li>
+        <li class="col-lg-1">
+            <a href="o-nas">
+                o nas
+            </a>
+        </li>
+        <li class="col-lg-1">
+            <a href="kontakt">
+                kontakt
+            </a>
+        </li>
+    </ul>
+    <ul class="row container nav-series-wrapper" data-spy="affix" data-offset-top="145">
+        <li class="logo-z-cyklu-small-wrapper">
+            <a class="logo-z-cyklu-small" href="#">
+                <img src="img/logo_small.png">
+            </a>
+        </li>
+        <% categories.forEach(function (category) { %>
+            <li>
+            <div class="dropdown <%= category.className %>">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= category.title %>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <% category.cycles.forEach(function (cycle) { %>
+                    <li>
+                        <a href="<%= cycle.slug %>"><%= cycle.name %></a>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </li>
+        <% }); %>
+    </ul>
+    </nav>
+</div>

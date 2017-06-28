@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const app = express()
+const favicon = require('serve-favicon')
 
 const index = require('./routes/index')
 
@@ -9,6 +10,7 @@ const aboutUs = require('./routes/aboutUs')
 const contact = require('./routes/contact')
 
 app.set('port', (process.env.PORT || 5000))
+app.use(favicon(path.join(__dirname, '/public', 'img', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, '/public')))
 
 // views is directory for all template files
