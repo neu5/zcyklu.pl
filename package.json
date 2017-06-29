@@ -26,6 +26,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "contentful-management": "^4.2.2",
     "dotenv": "5.0.0",
     "node-sass": "4.7.2",
     "nodemon": "1.15.0",
