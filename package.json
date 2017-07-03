@@ -7,9 +7,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "prestart": "node-sass frontend/scss/ -o public/stylesheets/ --output-style compressed",
     "start": "node index.js",
-    "sass-dev": "node-sass -w frontend/scss/ -o public/stylesheets/"
+    "dev": "yarn nodemon",
+    "sass": "node-sass frontend/scss/ -o public/stylesheets/ --output-style compressed"
   },
   "dependencies": {
     "contentful": "4.4.4",
@@ -31,6 +31,7 @@
   "devDependencies": {
     "dotenv": "4.0.0",
     "node-sass": "4.5.3",
+    "nodemon": "1.11.0",
     "standard": "10.0.2"
   }
 }
