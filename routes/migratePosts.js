@@ -78,6 +78,175 @@ const categories = [{
   }
 }]
 
+const cycles = [{ name: 'Wywiady',
+  slug: 'cykl/39/wywiady/',
+  id: '39',
+  entryId: '1Uu5eK7ngMEu8oywecGiQo' }
+,
+{ name: 'Temat miesiąca',
+  slug: 'cykl/33/temat-miesiaca/',
+  id: '33',
+  entryId: 'rs3Z4EIqekAo8aeCsQu6u' }
+,
+{ name: 'Recenzje',
+  slug: 'cykl/28/recenzje/',
+  id: '28',
+  entryId: 'DJ8JGenp2Suoos2AoyOay' }
+,
+{ name: 'Relacje',
+  slug: 'cykl/34/relacje/',
+  id: '34',
+  entryId: '3a1ZUn67mo8qYkmE8kO40w' }
+,
+{ name: 'Lwy salonowe',
+  slug: 'cykl/30/lwy-salonowe/',
+  id: '30',
+  entryId: '4oIobFqoNOsyQMMeC8a6k6' }
+,
+{ name: 'Prime Time',
+  slug: 'cykl/15/prime-time/',
+  id: '15',
+  entryId: '58mSvg7XRuk8oCckqYY2oG' }
+,
+{ name: 'Social Power',
+  slug: 'cykl/44/Social-Power/',
+  id: '44',
+  entryId: '39IMTGrEEUCG80cyiq2MyQ' }
+,
+{ name: 'Zwoje rozwoju',
+  slug: 'cykl/37/Zwoje-rozwoju/',
+  id: '37',
+  entryId: 'arOk0HbyCI42y2wWAoyoM' }
+,
+{ name: 'Miasto projektowane',
+  slug: 'cykl/22/miasto-projektowane/',
+  id: '22',
+  entryId: '61InA4SFos6YqCucakaIUI' }
+,
+{ name: 'Rozbij grę',
+  slug: 'cykl/36/Rozbij-gre/',
+  id: '36',
+  entryId: '5wHEWLxU3KucG8csiaqOQM' }
+,
+{ name: 'Meandry kultury',
+  slug: 'cykl/11/meandry-kultury/',
+  id: '11',
+  entryId: '2zPkuY4MCsuQUCE8eW4QQI' }
+,
+{ name: 'Klasyka do herbaty',
+  slug: 'cykl/43/Klasyka-do-herbaty/',
+  id: '43',
+  entryId: '5CsswgBSzSQSaeW2McaIsc' }
+,
+{ name: 'Żywe słowa',
+  slug: 'cykl/18/zywe-slowa/',
+  id: '18',
+  entryId: '2RSXrevdGMIiWGSaIMC4cy' }
+,
+{ name: 'Fantastyczny problem',
+  slug: 'cykl/25/fantastyczny-problem/',
+  id: '25',
+  entryId: '5sjKPd6ZC8mcu40GoeUYEA' }
+,
+{ name: 'Poezje nieoczywiste',
+  slug: 'cykl/32/poezje-nieoczywiste/',
+  id: '32',
+  entryId: '12OLrLbTWKsqiKG6QcOOcs' }
+,
+{ name: 'Wyrazy wyraziste',
+  slug: 'cykl/10/wyrazy-wyraziste/',
+  id: '10',
+  entryId: '5llKtII1tS08IUC0OGKogo' }
+,
+{ name: 'Muzyka dla mas/nas',
+  slug: 'cykl/26/muzyka-dla-mas-nas/',
+  id: '26',
+  entryId: 'isexwChMCk2ww4O4KmMo8' }
+,
+{ name: 'Adaptacje&sensacje',
+  slug: 'cykl/16/adaptacje-sensacje/',
+  id: '16',
+  entryId: '2ZiFOf1azuaY0WqmaycGsA' }
+,
+{ name: 'Filmowa masakra',
+  slug: 'cykl/42/Filmowa-masakra/',
+  id: '42',
+  entryId: '5vwoUr4QlUm2ywwmIW0mwg' }
+,
+{ name: 'Filmowe konfrontacje',
+  slug: 'cykl/40/Filmowe-konfrontacje/',
+  id: '40',
+  entryId: '4nuXWEDYrKCIkoI6OCAuGI' }
+,
+{ name: 'Dziesięć kochanek Filmu',
+  slug: 'cykl/9/dziesiec-kochanek-filmu/',
+  id: '9',
+  entryId: '2kigckJYaAIyAEoouQQKUs' }
+,
+{ name: 'Królowie absurdu',
+  slug: 'cykl/35/Krolowie-absurdu/',
+  id: '35',
+  entryId: '4238y1EMXmyageqsacM6yc' }
+,
+{ name: 'Kultura w dymkach',
+  slug: 'cykl/24/kultura-w-dymkach/',
+  id: '24',
+  entryId: '1Mhtc2smRGIA66KK2uwySu' }
+,
+{ name: 'Ścieżki malarstwa',
+  slug: 'cykl/27/sciezki-malarstwa/',
+  id: '27',
+  entryId: '7nzXFQf2Tu6WIKyEugQMaI' }
+,
+{ name: 'Winnie the Book',
+  slug: 'cykl/41/Winne-the-book/',
+  id: '41',
+  entryId: '1vFc8pBp1OWYeay4Ma6EKu' }
+,
+{ name: 'Mityng',
+  slug: 'cykl/38/Mityng/',
+  id: '38',
+  entryId: 'kjNBqkuUxMU6A2288Guu6' }
+,
+{ name: 'Imaginacje&inspiracje',
+  slug: 'cykl/17/imaginacje-inspiracje/',
+  id: '17',
+  entryId: '6I5zkq045aGkCSKKE6EYEM' }
+,
+{ name: 'LUS|TRO',
+  slug: 'cykl/12/lustro/',
+  id: '12',
+  entryId: '3deslrhbV68oqiawoK6wsq' }
+,
+{ name: 'Popkulturowy bestiariusz',
+  slug: 'cykl/29/popkulturowy-bestiariusz/',
+  id: '29',
+  entryId: 'HRdCM3QtA2EEk4OuGMAGy' }
+,
+{ name: 'Przepis na:',
+  slug: 'cykl/21/przepis-na/',
+  id: '21',
+  entryId: '5ze9dJzSvusYauqAgqYoKi' }]
+
+const authors = [ 
+  { entryId: 'zWJpIcNdiS0qI4IQIUc4k', author_id: 22 },
+  { entryId: '6G28Yc3O7Ksouui6KUuc0K', author_id: 7 },
+  { entryId: '5lqkxCpmEgoeeE4Gmy2iuo', author_id: 29 },
+  { entryId: '5grpaMzrdKiWYUqoYKUGUk', author_id: 15 },
+  { entryId: '78ZCPNWjIsu4m2suGeSka2', author_id: 30 },
+  { entryId: 'mdipVAVDW0yaw66QI22Q0', author_id: 28 },
+  { entryId: '1lOdjrfx1yWqgYM64iQKyK', author_id: 16 },
+  { entryId: '5aPhQ2EZ9KCsGmwQ00I8ei', author_id: 4 },
+  { entryId: '4OMMylRpokq0wkgyCesG2M', author_id: 26 },
+  { entryId: '6033k0fC9yyWsyCUkOAMOQ', author_id: 11 },
+  { entryId: '7A6Oz56oa4wmGkGWOQu6Sc', author_id: 23 },
+  { entryId: '7N2kC0a4IocUgwWCc4uuqi', author_id: 20 },
+  { entryId: '279x1Cv9YUmeCI8WUou0Oo', author_id: 25 },
+  { entryId: 'TRj4ULcVaw8sgok8UCc4S', author_id: 9 },
+  { entryId: '2mWCC08C1uCUqEc0QAIWIQ', author_id: 6 },
+  { entryId: '1mJ8Vxu0aEA8O266sYEEsw', author_id: 27 },
+  { entryId: '38UHqdVF44ikoAaus4g6UO', author_id: 10 } ]
+
 const router = express.Router()
 const SPACE_ID = process.env.SPACE_ID
 
@@ -108,13 +277,32 @@ function getCategory (post) {
   }).category
 }
 
+function getCycle (post) {
+  return cycles.find(c => {
+    if (c.id === post.serie_id) {
+      return true
+    }
+  }).entryId
+}
+
+function getAuthor (post) {
+  return authors.find(a => {
+    if (a.author_id.toString() === post.author_id) {
+      return true
+    }
+  })
+}
+
 function createEntries (space, post) {
-  space.createEntry('post', post)
+  setTimeout(() => {
+    space.createEntry('post', post)
+  }, 2000)
 }
 
 function prepareEntries (posts) {
   return posts.map(post => {
-    return {
+    const authorEntry = getAuthor(post)
+    const entry = {
       fields: {
         lead: { 'pl-PL': post.lead },
         title: { 'pl-PL': post.title },
@@ -123,23 +311,36 @@ function prepareEntries (posts) {
         tileInfo: { 'pl-PL': post.tile_description },
         imgSource: { 'pl-PL': post.picture_source },
         oldId: { 'pl-PL': parseInt(post.id, 10) },
-        category: { 'pl-PL': getCategory(post) }
-        // author: {
-        //   'pl-PL': [
-        //     { sys: {
-        //       id: '6033k0fC9yyWsyCUkOAMOQ',
-        //       linkType: 'Entry',
-        //       type: 'Link'
-        //     }}
-        //   ]
-        // }
+        category: { 'pl-PL': getCategory(post) },
+        date: { 'pl-PL': post.created_date.split(' ')[0] },
+        cycle: { 'pl-PL': {sys: {
+          id: getCycle(post),
+          linkType: 'Entry',
+          type: 'Link'
+        }}
+        }
       }
     }
+
+    if (authorEntry) {
+      entry.fields.author = { 'pl-PL': [
+          {
+            sys:
+            {
+              id: authorEntry.entryId,
+              linkType: 'Entry',
+              type: 'Link'
+            }
+          }]
+        }
+    }
+
+    return entry
   })
 }
 
 function processJson (req, res, next) {
-  posts = posts.slice(0, 1)
+  posts = posts.slice(10, 50)
 
   client.getSpace(SPACE_ID)
     .then(space => {
@@ -149,6 +350,14 @@ function processJson (req, res, next) {
       posts.forEach(post => createEntries(space, post))
     })
     .catch(err => console.log(err))
+
+  // posts = posts.filter(p => {
+  //   if (p.title !== 'test') {
+  //     return true
+  //   }
+  // })
+
+  req.posts = posts
 
   next()
 }

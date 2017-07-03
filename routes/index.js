@@ -14,20 +14,15 @@ const client = contentful.createClient({
 
 function fetchData (req, res, next) {
   client.getEntries({
-    'content_type': '5KMiN6YPvi42icqAUQMCQe',
-    'include': 1,
-    'order': 'fields.position',
-    'select': 'fields.title,fields.className,fields.itsCycles'
+    'content_type': 'post'
+    // 'include': 1,
+    // 'order': 'fields.position',
+    // 'select': 'fields.title,fields.className,fields.itsCycles'
   })
-    .then(data => data.items.map(item => {
-      const { title, className, itsCycles } = item.fields
+    .then(data => {
+      console.log(data.items)
 
-      return {
-        title,
-        className,
-        cycles: itsCycles
-      }
-    }))
+    })
     .then(categories => {
       categories.map(category => {
         if (!category.cycles) {
