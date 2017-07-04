@@ -313,6 +313,7 @@ function prepareEntries (posts) {
         oldId: { 'pl-PL': parseInt(post.id, 10) },
         category: { 'pl-PL': getCategory(post) },
         date: { 'pl-PL': post.created_date.split(' ')[0] },
+        featuredImageOldUrl: { 'pl-PL': `http://zcyklu.linuxpl.eu/uploaded/${post.thumb}` },
         cycle: { 'pl-PL': {sys: {
           id: getCycle(post),
           linkType: 'Entry',
@@ -340,7 +341,7 @@ function prepareEntries (posts) {
 }
 
 function processJson (req, res, next) {
-  posts = posts.slice(10, 50)
+  posts = posts.slice(0, 10)
 
   client.getSpace(SPACE_ID)
     .then(space => {
