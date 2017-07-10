@@ -340,8 +340,12 @@ function prepareEntries (posts) {
   })
 }
 
+function slice (posts, n) {
+  return posts.slice(n * 10, (n + 1) * 10)
+}
+
 function processJson (req, res, next) {
-  posts = posts.slice(0, 10)
+  posts = slice(posts, 0)
 
   client.getSpace(SPACE_ID)
     .then(space => {
