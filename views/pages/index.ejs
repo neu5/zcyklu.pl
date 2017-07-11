@@ -2,8 +2,72 @@
 
 <% include ../partials/nav.ejs %>
 
+<a href="<%= mainPost.fields.category.fields.className %>/<%= mainPost.fields.oldId %>/<%= mainPost.fields.slug %>" class="main-img-wrapper has-gradient" style="background-image: url(<%= mainPost.fields.featuredImageOldUrl %>)">
+    <header class="container header-wrapper on-top">
+        <div class="article-info">
+            <span class="author"><%= mainPost.fields.author[0].fields.name %></span> - <time><%= mainPost.fields.date %></time>
+        </div>
+        <h1 class="article-header">
+            <%= mainPost.fields.title %>    
+        </h1>
+        <div class="article-lead">
+            <%= mainPost.fields.tileInfo %>
+        </div>
+        <em class="read-more">
+            czytaj dalej &raquo;
+        </em>
+    </header>
+</a>
+
 <main class="container frontpage-wrapper">
-<%- page.content %>
+    <div class="col-lg-10 articles-wrapper">
+    <% posts.forEach(function (post) { %>
+        <% if (post.bigPost) { %>
+        <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="col-lg-6 article-big-wrapper <%= post.fields.category.fields.className %>">
+            <div class="header-wrapper">
+                <h1><%= post.fields.title %></h1>
+            </div>
+            <div class="article-big has-gradient">
+                <img src="<%= post.fields.featuredImageOldUrl %>">
+                <div class="article-content-wrapper on-top">
+                    <time class="article-date">
+                        <%= post.fields.date %>
+                    </time>
+                    <div class="article-author">
+                        <%= post.fields.author[0].fields.name %>
+                    </div>
+                    <div class="article-lead">
+                        <%= post.fields.tileInfo %>
+                    </div>
+                </div>
+                <span class="icon-angle-circled-right on-top"></span>
+            </div>
+        </a>
+        <% } else { %>
+        <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="col-lg-6 article-wrapper <%= post.fields.category.fields.className %>">
+            <div class="header-wrapper">
+                <h1><%= post.fields.title %></h1>
+            </div>
+            <div class="article">
+                <div class="img-wrapper">
+                    <img src="<%= post.fields.featuredImageOldUrl %>">
+                </div>
+                <div class="article-content-wrapper">
+                    <time class="article-date">
+                        <%= post.fields.date %>
+                    </time>
+                    <div class="article-author">
+                        <%= post.fields.author[0].fields.name %>
+                    </div>
+                    <div class="article-lead">
+                        <%= post.fields.tileInfo %>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <% } %>
+    <% }); %>
+    </div>
     <aside class="col-lg-2 aside-series-wrapper">
         <div class="series-wrapper" data-spy="affix" data-offset-top="745" data-offset-bottom="50">
             <h1>Cykle</h1>

@@ -3,7 +3,7 @@
     <ul class="row nav-social-icons-wrapper">
         <li class="col-lg-3 logo-wrapper">
             <a class="logo-z-cyklu" href="/">
-                <img src="img/logo_medium_full.png">
+                <img src="/img/logo_medium_full.png">
             </a>
         </li>
         <li class="col-lg-1 col-lg-offset-4">
@@ -13,12 +13,12 @@
             <a href="mailto:redakcja@zcyklu.pl" class="icon-link"><span class="icon-mail"></span></a>
         </li>
         <li class="col-lg-1">
-            <a href="o-nas">
+            <a href="/o-nas">
                 o nas
             </a>
         </li>
         <li class="col-lg-1">
-            <a href="kontakt">
+            <a href="/kontakt">
                 kontakt
             </a>
         </li>
@@ -26,7 +26,7 @@
     <ul class="row container nav-series-wrapper" data-spy="affix" data-offset-top="145">
         <li class="logo-z-cyklu-small-wrapper">
             <a class="logo-z-cyklu-small" href="#">
-                <img src="img/logo_small.png">
+                <img src="/img/logo_small.png">
             </a>
         </li>
         <% categories.forEach(function (category) { %>
@@ -39,7 +39,7 @@
                 <ul class="dropdown-menu" role="menu">
                     <% category.cycles.forEach(function (cycle) { %>
                     <li>
-                        <a href="<%= cycle.slug %>"><%= cycle.name %></a>
+                        <a href="/<%= cycle.slug %>"><%= cycle.name %></a>
                     </li>
                     <% }); %>
                 </ul>

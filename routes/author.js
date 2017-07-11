@@ -2,8 +2,6 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const express = require('express')
 const contentful = require('contentful')
-const ellipsize = require('ellipsize')
-const striptags = require('striptags')
 
 const router = express.Router()
 
@@ -55,50 +53,31 @@ function fetchData (req, res, next) {
     .catch(err => console.log(err))
 }
 
-function fetchPosts (req, res, next) {
+function fetchAuthor (req, res, next) {
   client.getEntries({
-    'content_type': 'post',
+    'content_type': '1kUEViTN4EmGiEaaeC6ouY',
     'include': 1,
-    'order': '-fields.date',
-    'select': 'fields.title,fields.tileInfo,fields.lead,fields.author,fields.category,fields.cycle,fields.slug,fields.oldId,fields.date,fields.featuredImageOldUrl'
+    'fields.slug': req.originalUrl.split('/')[2]
   })
     .then(data => {
-      const posts = data.items.map((post, idx) => {
-        if (idx === 0) {
-          req.mainPost = post
-        }
+      req.author = data.items[0].fields
 
-        if (idx === 1) {
-          post.bigPost = true
-        }
-
-        return post
-      }).slice(1)
-
-      req.posts = posts.map(post => {
-        if (!post.fields.tileInfo.length) {
-          post.fields.tileInfo = striptags(post.fields.lead)
-        }
-
-        post.fields.tileInfo = ellipsize(post.fields.tileInfo, 180, { chars: ' ' })
-
-        return post
-      })
+      console.log(req.author)
 
       next()
     })
+    .catch(err => console.log(err))
 }
 
 router.use(fetchData)
-router.use(fetchPosts)
+router.use(fetchAuthor)
 
 router.get('/', function (req, res) {
-  const { categories, mainPost, posts } = req
+  const { categories, author } = req
 
-  res.render('pages/index', {
+  res.render('pages/author', {
     categories,
-    mainPost,
-    posts
+    author
   })
 })
 

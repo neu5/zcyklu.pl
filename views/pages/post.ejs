@@ -1,0 +1,56 @@
+<% include ../partials/header.ejs %>
+
+<% include ../partials/nav.ejs %>
+
+<div class="main-img-wrapper article-main-wrapper has-gradient" style="background-image: url(<%= post.featuredImageOldUrl %>)">
+    <div class="container on-top">
+        <header class="header-wrapper col-lg-8 col-lg-push-2">
+                <a href="/<%= post.cycle.fields.slug %>" class="category-name <%= post.category.fields.className %>">
+                    <%= post.cycle.fields.name %>
+                </a>
+            <h1 class="article-header">
+                <%= post.title %>
+            </h1>
+            <div class="article-info">
+                <time><%= post.date %></time>
+                <a class="author" href="/autor/<%= post.author[0].fields.slug %>">
+                    <%= post.author[0].fields.name %>
+                </a>
+            </div>
+        </header>
+    </div>
+</div>
+<% if (post.imgSource) { %>
+<div class="container">
+    <div class="col-lg-8 col-lg-push-2 picture-source">
+        Źródło grafiki: <%= post.imgSource %>
+    </div>
+</div>
+<% } %>
+<main class="container article-wrapper">
+    <div class="col-lg-8 col-lg-push-2">
+        <div class="article-lead">
+            <%- post.lead %>
+        </div>
+        <div class="article-content">
+            <%- post.body %>
+        </div>
+        <hr>
+        <a href="/autor/<%= post.author[0].fields.slug %>" class="author-biogram row">
+            <img class="col-lg-2" src="<%= post.author[0].fields.profilePhoto.fields.file.url %>">
+            <h1 class="col-lg-10">
+                <%= post.author[0].fields.name %>
+            </h1>
+            <p class="col-lg-10">
+                <%= post.author[0].fields.biography %>
+            </p>
+        </a>
+        <hr>
+        <div class="comments-wrapper">
+            <div class="fb-like" data-href="<%= originalUrl %>" data-send="false" data-width="760" data-show-faces="true"></div>
+            <div class="fb-comments" data-href="<%= originalUrl %>" data-width="760" data-num-posts="10"></div>
+        </div>
+    </div>
+</main> <!-- /container -->
+
+<% include ../partials/footer.ejs %>

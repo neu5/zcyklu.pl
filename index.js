@@ -3,7 +3,13 @@ const express = require('express')
 const app = express()
 const favicon = require('serve-favicon')
 
+// @TODO: put it in the config file and create regex from that
+const postsRe = /\/(w-przekroju|na-czasie|w-obrazach|na-ekranie|w-muzyce|w-slowach|wsrod-ludzi)\/.*/
+
 const index = require('./routes/index')
+const post = require('./routes/post')
+const cycle = require('./routes/cycle')
+const author = require('./routes/author')
 
 // static pages
 const aboutUs = require('./routes/aboutUs')
@@ -18,6 +24,9 @@ app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 
 app.use('/', index)
+app.use(postsRe, post)
+app.use('/cykl/*', cycle)
+app.use('/autor/*', author)
 app.use('/o-nas', aboutUs)
 app.use('/kontakt', contact)
 

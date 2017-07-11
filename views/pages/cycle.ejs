@@ -1,0 +1,47 @@
+<% include ../partials/header.ejs %>
+
+<% include ../partials/nav.ejs %>
+
+<div class="main-img-wrapper serie-main-wrapper <%= posts[0].fields.category.fields.className %>">
+    <div class="container">
+        <header class="header-wrapper col-lg-8 col-lg-push-2">
+            <h1 class="serie-name">
+                <%= posts[0].fields.cycle.fields.name %>
+            </h1>
+        </header>
+    </div>
+</div>
+<main class="container article-wrapper series-wrapper">
+    <div class="col-lg-8 col-lg-push-2">
+        <div>
+            <%= posts[0].fields.cycle.fields.description %>
+        </div>
+    </div>
+    <div class="col-lg-10 articles-wrapper">
+        <% posts.forEach(function (post) { %>
+        <a href="/<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="col-lg-6 article-wrapper <%= post.fields.category.fields.className %>">
+            <div class="header-wrapper">
+                <h1><%= post.fields.title %></h1>
+            </div>
+            <div class="article">
+                <div class="img-wrapper">
+                    <img src="<%= post.fields.featuredImageOldUrl %>">
+                </div>
+                <div class="article-content-wrapper">
+                    <time class="article-date">
+                        <%= post.fields.date %>
+                    </time>
+                    <div class="article-author">
+                        <%= post.fields.author[0].fields.name %>
+                    </div>
+                    <div class="article-lead">
+                        <%- post.fields.tileInfo %>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <% }); %>
+    </div>
+</main> <!-- /container -->
+
+<% include ../partials/footer.ejs %>

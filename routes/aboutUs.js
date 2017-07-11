@@ -78,9 +78,11 @@ router.use(fetchData)
 router.use(fetchEntry)
 
 router.get('/', function (req, res) {
+  const { categories, page } = req
+
   res.render('pages/aboutUs', {
-    categories: req.categories,
-    page: req.page
+    categories,
+    page
   })
 })
 

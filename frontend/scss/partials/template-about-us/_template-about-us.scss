@@ -1,8 +1,30 @@
 .about-us-wrapper {
-    h1 {
-        text-transform: uppercase;
+    > div {
+        > h1 {
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
     }
     p {
         font-size: 18px;
+        text-align: justify;
+    }
+    .authors-wrapper {
+        h1 {
+            text-transform: uppercase;
+        }
+        a {
+            color: #000000;
+            display: block;
+            margin-bottom: 10px;
+            img {
+                width: 125px;
+            }
+            p {
+                margin: 0;
+                padding: 0 0 0 15px;
+                line-height: 180px;
+            }
+        }
     }
 }
