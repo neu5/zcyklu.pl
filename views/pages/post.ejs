@@ -13,9 +13,14 @@
             </h1>
             <div class="article-info">
                 <time><%= post.date %></time>
-                <a class="author" href="/autor/<%= post.author[0].fields.slug %>">
-                    <%= post.author[0].fields.name %>
+                <% post.author.forEach(function (author, idx) { %>
+                    <% if (idx > 0) { %>
+                        ,
+                    <% } %>
+                <a class="author" href="/autor/<%= author.fields.slug %>">
+                    <%= author.fields.name %>
                 </a>
+                <% }); %>
             </div>
         </header>
     </div>
@@ -36,16 +41,18 @@
             <%- post.body %>
         </div>
         <hr>
-        <a href="/autor/<%= post.author[0].fields.slug %>" class="author-biogram row">
-            <img class="col-lg-2" src="<%= post.author[0].fields.profilePhoto.fields.file.url %>">
-            <h1 class="col-lg-10">
-                <%= post.author[0].fields.name %>
-            </h1>
-            <p class="col-lg-10">
-                <%= post.author[0].fields.biography %>
-            </p>
-        </a>
-        <hr>
+        <% post.author.forEach(function (author) { %>
+            <a href="/autor/<%= author.fields.slug %>" class="author-biogram row">
+                <img class="col-lg-2" src="<%= author.fields.profilePhoto.fields.file.url %>">
+                <h1 class="col-lg-10">
+                    <%= author.fields.name %>
+                </h1>
+                <p class="col-lg-10">
+                    <%= author.fields.biography %>
+                </p>
+            </a>
+            <hr>
+        <% }); %>
         <div class="comments-wrapper">
             <div class="fb-like" data-href="<%= originalUrl %>" data-send="false" data-width="760" data-show-faces="true"></div>
             <div class="fb-comments" data-href="<%= originalUrl %>" data-width="760" data-num-posts="10"></div>
