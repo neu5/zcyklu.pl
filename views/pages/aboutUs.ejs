@@ -8,14 +8,16 @@
       <h1>
           Redakcja
       </h1>
-      <% page.authors.forEach(function (author) { %>
-      <a href="/autor/<%= author.fields.slug %>" class="author-biogram row">
-        <img class="col-lg-2" src="<%= author.fields.profilePhoto.fields.file.url %>?w=125">
-        <p class="col-lg-10">
-          <%= author.fields.name %>
-        </p>
-      </a>
-      <% }); %>
+      <div class="authors-list">
+        <% page.authors.forEach(function (author) { %>
+        <a href="/autor/<%= author.fields.slug %>" class="author-biogram row authors-list__item">
+          <img src="<%= author.fields.profilePhoto.fields.file.url %>?w=125">
+          <p>
+            <%= author.fields.name %>
+          </p>
+        </a>
+        <% }); %>
+      </div>
   </div>
 </main> <!-- /container -->
 
