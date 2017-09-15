@@ -7,7 +7,7 @@
         <div class="article-info">
             <span class="author">
             <% mainPost.fields.author.forEach(function (author, idx) { %>
-                <% if (idx > 0) { %> , <% } %>
+                <% if (idx > 0) { %>, <% } %>
                 <%= author.fields.name %>
             <% }); %>
             </span> - <time><%= mainPost.fields.date %></time>
@@ -40,7 +40,10 @@
                         <%= post.fields.date %>
                     </time>
                     <div class="article-author">
-                        <%= post.fields.author[0].fields.name %>
+                        <% post.fields.author.forEach(function (author, idx) { %>
+                            <% if (idx > 0) { %>, <% } %>
+                            <%= author.fields.name %>
+                        <% }); %>
                     </div>
                     <div class="article-lead">
                         <%= post.fields.tileInfo %>
@@ -63,7 +66,10 @@
                         <%= post.fields.date %>
                     </time>
                     <div class="article-author">
-                        <%= post.fields.author[0].fields.name %>
+                        <% post.fields.author.forEach(function (author, idx) { %>
+                            <% if (idx > 0) { %>, </br><% } %>
+                            <%= author.fields.name %>
+                        <% }); %>
                     </div>
                     <div class="article-lead">
                         <%= post.fields.tileInfo %>
