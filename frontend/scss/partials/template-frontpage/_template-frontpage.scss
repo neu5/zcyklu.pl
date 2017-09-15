@@ -69,6 +69,12 @@
                 transition: 0.2s ease;
                 border-left: 0 solid;
                 padding-left: 15px;
+                @each $serie-name, $serie-color in $series-to-colors {
+                    &.#{$serie-name} {
+                        border-color: #{$serie-color};
+                    }
+                }
+
                 &:hover {
                     border-left: 2px solid;
                     padding-left: 20px;

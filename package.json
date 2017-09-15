@@ -6,11 +6,6 @@
     "node": "6.10.2"
   },
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "yarn nodemon",
-    "sass": "node-sass frontend/scss/ -o public/stylesheets/ --output-style compressed"
-  },
   "dependencies": {
     "contentful": "4.4.4",
     "ejs": "2.5.6",
@@ -35,5 +30,11 @@
     "node-sass": "4.5.3",
     "nodemon": "1.11.0",
     "standard": "10.0.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "yarn nodemon",
+    "sass-dev": "node-sass frontend/scss/ -o public/stylesheets/ -w",
+    "sass": "node-sass frontend/scss/ -o public/stylesheets/ --output-style compressed"
   }
 }
