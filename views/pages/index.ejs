@@ -29,10 +29,10 @@
     <div class="col-lg-10 articles-wrapper">
     <% posts.forEach(function (post) { %>
         <% if (post.bigPost) { %>
-        <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="col-lg-6 article-big-wrapper <%= post.fields.category.fields.className %>">
-            <div class="header-wrapper">
+        <article class="col-lg-6 article-big-wrapper <%= post.fields.category.fields.className %>">
+            <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="header-wrapper">
                 <h1><%= post.fields.title %></h1>
-            </div>
+            </a>
             <div class="article-big has-gradient">
                 <img src="<%= post.fields.featuredImageOldUrl %>">
                 <div class="article-content-wrapper on-top">
@@ -42,25 +42,27 @@
                     <div class="article-author">
                         <% post.fields.author.forEach(function (author, idx) { %>
                             <% if (idx > 0) { %>, <% } %>
-                            <%= author.fields.name %>
+                            <a href="/autor/<%= author.fields.slug %>">
+                                <%= author.fields.name %>
+                            </a>
                         <% }); %>
                     </div>
-                    <div class="article-lead">
+                    <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="article-lead">
                         <%= post.fields.tileInfo %>
-                    </div>
+                    </a>
                 </div>
-                <span class="icon-angle-circled-right on-top"></span>
+                <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="icon-angle-circled-right on-top"></a>
             </div>
-        </a>
+        </article>
         <% } else { %>
-        <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="col-lg-6 article-wrapper <%= post.fields.category.fields.className %>">
-            <div class="header-wrapper">
+        <article class="col-lg-6 article-wrapper <%= post.fields.category.fields.className %>">
+            <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="header-wrapper">
                 <h1><%= post.fields.title %></h1>
-            </div>
+            </a>
             <div class="article">
-                <div class="img-wrapper">
+                <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="img-wrapper">
                     <img src="<%= post.fields.featuredImageOldUrl %>">
-                </div>
+                </a>
                 <div class="article-content-wrapper">
                     <time class="article-date">
                         <%= post.fields.date %>
@@ -68,15 +70,17 @@
                     <div class="article-author">
                         <% post.fields.author.forEach(function (author, idx) { %>
                             <% if (idx > 0) { %>, </br><% } %>
-                            <%= author.fields.name %>
+                            <a href="/autor/<%= author.fields.slug %>">
+                                <%= author.fields.name %>
+                            </a>
                         <% }); %>
                     </div>
-                    <div class="article-lead">
+                    <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="article-lead">
                         <%= post.fields.tileInfo %>
-                    </div>
+                    </a>
                 </div>
             </div>
-        </a>
+        </article>
         <% } %>
     <% }); %>
     </div>
