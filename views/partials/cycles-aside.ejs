@@ -1,0 +1,16 @@
+<aside class="col-lg-2 aside-series-wrapper">
+  <div class="series-wrapper" data-spy="affix" data-offset-top="745" data-offset-bottom="50">
+      <h1>Cykle</h1>
+      <ul class="series-list">
+          <% categories.forEach(function (category) { %>
+              <% category.cycles.forEach(function (cycle) { %>
+          <li>
+              <a href="<%= cycle.slug %>" class="<%= category.className %>">
+                  <%= cycle.name %>
+              </a>
+          </li>
+              <% }); %>
+          <% }); %>
+      </ul>
+  </div>
+</aside>
