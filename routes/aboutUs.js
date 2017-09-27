@@ -65,9 +65,17 @@ function fetchEntry (req, res, next) {
         .find(item => item.sys.id === '3vLWY4kZWEky02QUUkmAsc')
         .fields
 
+      const authorsActive = []
+      const authorsInactive = []
+
+      authors.forEach(author => {
+        author.fields.isActive === true ? authorsActive.push(author) : authorsInactive.push(author)
+      })
+
       req.page = {
         content,
-        authors
+        authorsActive,
+        authorsInactive
       }
 
       next()
