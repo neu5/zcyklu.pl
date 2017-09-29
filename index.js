@@ -15,7 +15,7 @@ const author = require('./routes/author')
 const aboutUs = require('./routes/aboutUs')
 const contact = require('./routes/contact')
 
-app.set('port', (process.env.PORT || 5000))
+app.set('port', (process.env.PORT || 5001))
 app.use(favicon(path.join(__dirname, '/public', 'img', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, '/public')))
 
