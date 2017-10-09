@@ -3,7 +3,7 @@
     height: 565px;
     overflow: hidden;
     position: relative;
-    display: block;
+    display: flex;
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;
@@ -12,7 +12,11 @@
         text-decoration: none;
     }
     .header-wrapper {
-        margin-top: 350px;
+        align-self: flex-end;
+        display: flex;
+        flex-flow: column;
+        margin-bottom: 20px;
+
         .article-info {
             margin: 0;
             font-weight: 300;

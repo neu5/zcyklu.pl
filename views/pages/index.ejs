@@ -33,8 +33,7 @@
             <a href="<%= post.fields.category.fields.className %>/<%= post.fields.oldId %>/<%= post.fields.slug %>" class="header-wrapper">
                 <h1><%= post.fields.title %></h1>
             </a>
-            <div class="article-big has-gradient">
-                <img src="<%= post.fields.featuredImageOldUrl %>">
+            <div class="article-big has-gradient" style="background-image: url(<%= post.fields.featuredImageOldUrl %>)">
                 <div class="article-content-wrapper on-top">
                     <time class="article-date">
                         <%= post.fields.date %>
