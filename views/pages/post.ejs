@@ -5,9 +5,11 @@
 <div class="main-img-wrapper article-main-wrapper has-gradient" style="background-image: url(<%= post.featuredImageOldUrl %>)">
     <div class="container on-top">
         <header class="header-wrapper col-lg-8 col-lg-push-2">
+            <div>
                 <a href="/<%= post.cycle.fields.slug %>" class="category-name <%= post.category.fields.className %>">
                     <%= post.cycle.fields.name %>
                 </a>
+            </div>
             <h1 class="article-header">
                 <%= post.title %>
             </h1>
@@ -43,11 +45,11 @@
         <hr>
         <% post.author.forEach(function (author) { %>
             <a href="/autor/<%= author.fields.slug %>" class="author-biogram row">
-                <img class="col-lg-2" src="<%= author.fields.profilePhoto.fields.file.url %>">
-                <h1 class="col-lg-10">
+                <img class="col-xs-2" src="<%= author.fields.profilePhoto.fields.file.url %>">
+                <h1 class="col-xs-10">
                     <%= author.fields.name %>
                 </h1>
-                <p class="col-lg-10">
+                <p class="col-xs-10">
                     <%= author.fields.biography %>
                 </p>
             </a>

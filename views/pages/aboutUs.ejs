@@ -2,31 +2,31 @@
 
 <% include ../partials/nav.ejs %>
 
-<main class="container about-us-wrapper">
+<main class="container c-about-us-wrapper">
 <%- page.content %>
-  <div class="authors-wrapper col-lg-12">
-      <h1>
+  <div class="c-authors">
+      <h1 class="c-authors__header">
           Redakcja
       </h1>
-      <div class="authors-list">
+      <div class="c-authors-list">
         <% page.authorsActive.forEach(function (author) { %>
-        <a href="/autor/<%= author.fields.slug %>" class="author-biogram row authors-list__item">
-          <img src="<%= author.fields.profilePhoto.fields.file.url %>?w=125">
-          <p>
+        <a class="c-authors-list__item" href="/autor/<%= author.fields.slug %>">
+          <img class="c-authors-list__img" src="<%= author.fields.profilePhoto.fields.file.url %>?w=125">
+          <p class="c-authors-list__text">
             <%= author.fields.name %>
           </p>
         </a>
         <% }); %>
       </div>
-      <h2 class="authors__subheader">
+      <h2 class="c-authors__subheader">
         Współpracowali z nami
       </h2>
       <hr>
-      <div class="authors-list">
+      <div class="c-authors-list">
         <% page.authorsInactive.forEach(function (author) { %>
-        <a href="/autor/<%= author.fields.slug %>" class="author-biogram row authors-list__item">
-          <img src="<%= author.fields.profilePhoto.fields.file.url %>?w=125">
-          <p>
+        <a class="c-authors-list__item" href="/autor/<%= author.fields.slug %>">
+          <img class="c-authors-list__img" src="<%= author.fields.profilePhoto.fields.file.url %>?w=125">
+          <p class="c-authors-list__text">
             <%= author.fields.name %>
           </p>
         </a>

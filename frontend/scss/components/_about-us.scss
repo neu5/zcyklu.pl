@@ -1,0 +1,56 @@
+.c-about-us {
+  &-wrapper {
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 20px;
+  }
+  &__header {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  &__text {
+    font-size: 18px;
+    text-align: justify;
+  }
+}
+
+.c-authors {
+  &__header {
+    text-transform: uppercase;
+  }
+
+  &__subheader {
+    margin-top: 50px;
+  }
+
+  &-list {
+    display: flex;
+    flex-flow: row wrap;
+    
+    &__item {
+      align-items: center;
+      color: #000000;
+      display: flex;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    &__img {
+      width: 125px;
+    }
+    &__text {
+      margin: 0;
+      padding: 0 0 0 15px;
+      line-height: 180px;
+    }
+  }
+}
+
+@media all and (min-width: $bp-s) {
+  .c-authors {
+    &-list {
+      &__item {
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 .article-main-wrapper {
     > .container > .header-wrapper {
         text-align: center;
-        margin-top: 300px;
-        > .category-name {
+
+        .category-name {
             font-weight: 600;
             padding: 2px 12px;
             @each $serie-name, $serie-color in $series-to-colors {

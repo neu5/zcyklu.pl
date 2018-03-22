@@ -48,6 +48,12 @@
     margin-top: 30px;
 }
 .aside-series-wrapper {
+    display: none;
+
+    @media all and (min-width: $bp-l) {
+        display: block;
+    }
+
     h1 {
         font-size: 24px;
         padding-left: 15px;
