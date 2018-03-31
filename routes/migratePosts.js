@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 const express = require('express')
 const contentful = require('contentful-management')
 
-let posts = require('../posts_parsed.json')
+let posts = require('../posts_parsed.json').filter(post => post.status === 'active')
 // const categories = require('../categories.json')
 
 const categories = [{
@@ -72,6 +72,16 @@ const categories = [{
   category: {
     sys: {
       id: '2T418fHqkgig6YaQyeMGUq',
+      linkType: 'Entry',
+      type: 'Link'
+    }
+  }
+}, {
+  'id': '13',
+  'url': 'bez-kategorii',
+  category: {
+    sys: {
+      id: '6RUeM8XnnqicyykioM2eq4',
       linkType: 'Entry',
       type: 'Link'
     }
@@ -282,7 +292,7 @@ function getCycle (post) {
     if (c.id === post.serie_id) {
       return true
     }
-  }).entryId
+  });
 }
 
 function getAuthor (post) {
@@ -302,6 +312,26 @@ function createEntries (space, post) {
 function prepareEntries (posts) {
   return posts.map(post => {
     const authorEntry = getAuthor(post)
+
+    let cycle
+    const cycleId = getCycle(post)
+
+    if (cycleId) {
+      cycle = { 'pl-PL': {sys: {
+          id: cycleId.entryId,
+          linkType: 'Entry',
+          type: 'Link'
+        }}
+      }
+    } else {
+      cycle = { 'pl-PL': {sys: {
+          id: categories.find(c => c.id === '13').entryId,
+          linkType: 'Entry',
+          type: 'Link'
+        }}
+      }
+    }
+
     const entry = {
       fields: {
         lead: { 'pl-PL': post.lead },
@@ -314,12 +344,7 @@ function prepareEntries (posts) {
         category: { 'pl-PL': getCategory(post) },
         date: { 'pl-PL': post.created_date.split(' ')[0] },
         featuredImageOldUrl: { 'pl-PL': `http://zcyklu.linuxpl.eu/uploaded/${post.thumb}` },
-        cycle: { 'pl-PL': {sys: {
-          id: getCycle(post),
-          linkType: 'Entry',
-          type: 'Link'
-        }}
-        }
+        cycle
       }
     }
 
@@ -340,19 +365,43 @@ function prepareEntries (posts) {
   })
 }
 
+// n - int from 0 to N, eg. 0, 1, 2, 3...
 function slice (posts, n) {
   return posts.slice(n * 10, (n + 1) * 10)
 }
 
-function processJson (req, res, next) {
-  posts = slice(posts, 0)
+const createEntriesInBatches = (posts, space) => {
+  const interval = setInterval(makeCallToCrateEntries, 1000 * 4);
+  let i = 0
+  const postsLimit = Math.ceil(posts.length / 10)
 
+  console.log('--create entries in batches started')
+
+  function makeCallToCrateEntries() {
+    if (i >= postsLimit) {
+      console.log('create entries in batches ended --')
+      clearInterval(interval)
+
+      return
+    }
+
+    console.log(`sent batch nr: ${i}/${postsLimit}`)
+
+    const postsBatch = slice(posts, i)
+
+    postsBatch.forEach(post => createEntries(space, post))
+
+    i++
+  }
+}
+
+function processJson (req, res, next) {
   client.getSpace(SPACE_ID)
     .then(space => {
       // removeEntries(space)
 
       posts = prepareEntries(posts)
-      posts.forEach(post => createEntries(space, post))
+      createEntriesInBatches(posts, space)
     })
     .catch(err => console.log(err))
 

@@ -623,11 +623,7 @@ debug@2.6.9, debug@^2.3.3, debug@^2.6.9:
   dependencies:
     ms "2.0.0"
 
-<<<<<<< HEAD
 debug@^2.2.0:
-=======
-debug@2.6.7, debug@^2.1.1, debug@^2.2.0:
->>>>>>> Experimental branch, not gonna be merged
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
   dependencies:
