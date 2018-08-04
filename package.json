@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "description": "zcyklu.pl frontend app",
   "engines": {
-    "node": ">=6.10.2"
+    "node": ">=8.11.3"
   },
   "main": "index.js",
   "dependencies": {
     "contentful": "5.1.1",
-    "ejs": "2.5.7",
-    "ellipsize": "0.0.3",
-    "express": "4.16.2",
-    "serve-favicon": "2.4.5",
+    "ejs": "2.6.1",
+    "ellipsize": "0.1.0",
+    "express": "4.16.3",
+    "serve-favicon": "2.5.0",
     "striptags": "3.1.1"
   },
   "repository": {
@@ -26,10 +26,10 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "dotenv": "5.0.0",
-    "node-sass": "4.7.2",
-    "nodemon": "1.15.0",
-    "standard": "11.0.0"
+    "dotenv": "6.0.0",
+    "node-sass": "4.9.2",
+    "nodemon": "^.18.3",
+    "standard": "11.0.1"
   },
   "scripts": {
     "start": "node index.js",
