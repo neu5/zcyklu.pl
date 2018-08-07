@@ -35,6 +35,7 @@
     "start": "node index.js",
     "dev": "yarn nodemon",
     "sass-dev": "node-sass frontend/scss/ -o public/stylesheets/ -w",
-    "sass": "node-sass frontend/scss/ -o public/stylesheets/ --output-style compressed"
+    "sass": "node-sass frontend/scss/ -o public/stylesheets/ --output-style compressed",
+    "test": "exit 0"
   }
 }
