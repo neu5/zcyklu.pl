@@ -2,6 +2,10 @@ sudo: false
 cache:
   directories:
     - "node_modules"
+notifications:
+  email:
+    on_failure: always
+    on_success: never
 language: node_js
 node_js:
   - "8"
