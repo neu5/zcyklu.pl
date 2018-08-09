@@ -4,6 +4,12 @@
     margin-top: 20px;
     height: 160px;
     font-weight: 300;
+    display: none;
+
+    @media all and (min-width: $bp-m) {
+        display: block;
+    }
+
     a {
         color: #000000;
     }

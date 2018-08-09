@@ -1,12 +1,13 @@
 .main-img-wrapper {
     width: 100%;
-    height: 565px;
+    height: 100vh;
     overflow: hidden;
     position: relative;
     display: flex;
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;
+
     &:hover, &:focus {
         color: $white;
         text-decoration: none;
@@ -15,7 +16,13 @@
         align-self: flex-end;
         display: flex;
         flex-flow: column;
-        margin-bottom: 20px;
+        margin: 0 20px 20px 20px;
+        width: 100%;
+
+        @media all and (min-width: $bp-m) {
+            margin: 0 auto 20px auto;
+            width: 760px;
+        }
 
         .article-info {
             margin: 0;
