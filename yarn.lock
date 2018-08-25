@@ -531,9 +531,9 @@ contentful-sdk-core@^6.0.1:
     lodash "^4.17.10"
     qs "^6.5.2"
 
-contentful@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/contentful/-/contentful-7.0.1.tgz#7accdee8b19f4d38cb5a1716133f94dd486b6d74"
+contentful@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/contentful/-/contentful-7.0.2.tgz#7977cf19efd652ce93e2687d2c8ac0126028405b"
   dependencies:
     "@contentful/axios" "^0.18.0"
     contentful-resolve-response "^1.1.4"
