@@ -54,7 +54,14 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-facebook:before { content: '\e800'; } /* 'î €' */
+.icon-facebook {
+  width: 7px;
+}
+.icon-instagram {
+  width: 18px;
+  position: relative;
+  top: 4px;
+}
 .icon-mail:before { content: '\e801'; } /* 'î ' */
 .icon-rss:before { content: '\e802'; } /* 'î ‚' */
 .icon-heart:before { content: '\e803'; } /* 'î ƒ' */
