@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "contentful": "7.3.0",
+    "contentful": "7.14.4",
     "ejs": "2.6.1",
     "ellipsize": "0.1.0",
     "express": "4.16.3",
